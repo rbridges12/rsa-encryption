@@ -3,15 +3,17 @@ import random
 # TODO: random seed argument
 # TODO: dont hardcode
 def generate_keys():
-    p = 30781
-    q = 58913
+    # p = 30781
+    # q = 58913
+    p = 13
+    q = 41
     n = p * q
     phi = (p-1) * (q-1)
     e = coprime(phi)
     d = gcd(e, phi)[1]
     
     with open('keys.txt', 'w') as f:
-        f.write("%d\n%d\n%d" %(n, e, d))
+        f.write("%d\n%d\n%d\n" %(n, e, d))
 
 
 
